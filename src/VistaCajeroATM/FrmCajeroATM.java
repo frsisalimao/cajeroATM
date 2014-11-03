@@ -6,6 +6,9 @@
 package VistaCajeroATM;
 
 import ModeloCajeroATM.ClienteCajeroATM;
+import ModeloCajeroATM.Cuenta;
+import bd.BDOperacion;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author miguel
  */
 public class FrmCajeroATM extends javax.swing.JFrame {
-
+ List<Cuenta> listaCuenta;
     /**
      * Creates new form FrmCajeroATM
      */
@@ -22,9 +25,21 @@ public class FrmCajeroATM extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("CAJERO ATM");
         btnEntrar.setEnabled(false);
+         listaCuenta = BDOperacion.listaCuentas();
         
     }
-
+public void validar(){
+    for (int i = 0;i< listaCuenta.size(); i++) {
+        if((txtCedula.getText().equals(listaCuenta.get(i).getTipo()))&&(Psswrd.getText().equals(listaCuenta.get(i).getNumero_cuenta()))){
+            
+        new FrmUsuario().setVisible(true);
+        this.dispose();
+        }else{
+            System.out.println("no existe");
+        }
+    }
+    
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -159,8 +174,7 @@ public class FrmCajeroATM extends javax.swing.JFrame {
     }//GEN-LAST:event_PsswrdActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        new FrmUsuario().setVisible(true);
-        this.dispose();
+      validar();
         
     }//GEN-LAST:event_btnEntrarActionPerformed
 

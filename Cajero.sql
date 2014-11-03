@@ -40,7 +40,7 @@ insert into cuenta(numero_cuenta,tipo, saldo, idUsuario) values(00000000020, 'ah
 insert into cuenta(numero_cuenta,tipo, saldo, idUsuario) values(00000000021, 'corriente', 1.00, 4);
 insert into cuenta(numero_cuenta,tipo, saldo, idUsuario) values(0000000003, 'ahorro', 5.00, 5);
 insert into cuenta(numero_cuenta,tipo, saldo, idUsuario) values(0000000050, 'ahorro', 12.00, 6);
-
+/*
 create table transaccion(
 	idTransaccion int(10) not null auto_increment,
 	operacion varchar(150) not null,
@@ -52,7 +52,7 @@ create table transaccion(
 	foreign key(idTransaccion) references cuenta(idCuenta)
 );
 insert into transaccion(operacion, fecha, hora, cantidad,idCuenta) values('deposito', '10/12/2013','10:30',100,1);
-insert into transaccion(operacion, fecha, hora, cantidad,idCuenta) values('retiro', '10/12/2013','10:30',165,2);
+insert into transaccion(operacion, fecha, hora, cantidad,idCuenta) values('retiro', '10/12/2013','10:30',165,2);*/
 
 
 

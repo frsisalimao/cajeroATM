@@ -7,6 +7,7 @@
 package CajeroATM;
 
 import VistaCajeroATM.FrmCajeroATM;
+import VistaCajeroATM.Registro;
 
 /**
  *
@@ -18,7 +19,10 @@ public class CajeroAutomatico {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+      //  new Registro().setVisible(true);
         new FrmCajeroATM().setVisible(true);
+        
+        
     }
     
 }
